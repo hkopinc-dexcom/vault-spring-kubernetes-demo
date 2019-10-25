@@ -1,0 +1,1 @@
+docker build --build-arg JAR_FILE=build/libs/vault-spring-kubernetes-demo-1.0.jar -t spring-vault-demo .
