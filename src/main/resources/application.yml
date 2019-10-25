@@ -1,0 +1,24 @@
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+server:
+  servlet:
+    context-path: /
+    session:
+      timeout: 3600
+  use-forward-headers: true
+  tomcat:
+    protocolHeader: "x-forwarded-proto"
+    portHeader: "x-forwarded-port"
+    remoteIpHeader: "x-forwarded-for"
+
+spring:
+  main:
+    allow-bean-definition-overriding: false
+  pid:
+    file: "application.pid"
+  application:
+    name: "demo"

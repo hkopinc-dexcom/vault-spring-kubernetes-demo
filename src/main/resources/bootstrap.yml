@@ -1,0 +1,17 @@
+spring:
+  cloud:
+    vault:
+      host: localhost
+      port: 8200
+      scheme: https
+      authentication: KUBERNETES
+      kubernetes:
+        role: vault-demo
+        kubernetes-path: kubernetes
+        service-account-token-file: /var/run/secrets/kubernetes.io/serviceaccount/token
+      kv:
+        enabled: true
+        backend: secret
+        profile-separator: '/'
+        default-context: application
+        application-name: spring-vault
